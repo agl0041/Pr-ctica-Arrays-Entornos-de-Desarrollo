@@ -5,7 +5,7 @@ import java.io.*;
 
 public abstract class Arrays 
 {
-    public float mediaNotas (int numeros[]) throws Exception
+    public static float mediaNotas (int numeros[]) throws Exception
     {
         float media = 0;
         float contador = 0;
