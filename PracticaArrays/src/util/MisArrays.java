@@ -1,8 +1,12 @@
 //ALVARO GARCIA LAMUDA
 package util;
 
+import java.util.*;
+
 public abstract class MisArrays 
 {
+	static Scanner sc = new Scanner(System.in);
+	
     public static float mediaNotas (int numeros[]) throws IllegalArgumentException
     {
         float media = 0;
@@ -10,16 +14,14 @@ public abstract class MisArrays
         
         for (int i = 0; i < numeros.length; i++)
         {
+        	
         	System.out.println("Número " + (i+1) + ": " + numeros[i]);
         	
-        	if (numeros[i] < 0 || numeros[i] > 10)
-        		throw new IllegalArgumentException("ERROR: el número tiene que estar entre 0 y 10");
-  
-            else
-            {
-            	media += numeros[i];
-                contador ++;
-            }
+        	 if (numeros[i] < 0 || numeros[i] > 10)
+         		throw new IllegalArgumentException("ERROR: el número tiene que estar entre 0 y 10");
+        	 
+        	 media += numeros[i];
+        	 contador++;
         }  
         
         System.out.println("La media total es: " + (media/contador));
@@ -27,7 +29,7 @@ public abstract class MisArrays
         
         return (media/contador);			
     }
-    
+        
     
     public static int maximaNota (int numeros[]) throws IllegalArgumentException
     {
