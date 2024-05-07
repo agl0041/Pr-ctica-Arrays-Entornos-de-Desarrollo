@@ -28,6 +28,7 @@ public abstract class MisArrays
         return (media/contador);			
     }
     
+    
     public static int maximaNota (int numeros[]) throws IllegalArgumentException
     {
         int maximo = 0;
@@ -48,4 +49,26 @@ public abstract class MisArrays
         
         return maximo;			
     }   
+    
+    
+    public static int minimaNota (int numeros[]) throws IllegalArgumentException
+    {
+        int minimo = 100;
+        
+        for (int i = 0; i < numeros.length; i++)
+        {
+        	System.out.println("Número " + (i+1) + ": " + numeros[i]);
+        	
+        	if (numeros[i] < 0 || numeros[i] > 10)
+        		throw new IllegalArgumentException("ERROR: el número tiene que estar entre 0 y 10");
+  
+            if (numeros[i] < minimo)
+            	minimo = numeros[i];
+        } 
+        
+        System.out.println("El número mínimo es: " + minimo); 
+        System.out.println("");
+        
+        return minimo;			
+    } 
 }
