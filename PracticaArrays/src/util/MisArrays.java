@@ -3,7 +3,7 @@ package util;
 
 import java.io.*;
 
-public abstract class Arrays 
+public abstract class MisArrays 
 {
     public static float mediaNotas (int numeros[]) throws IllegalArgumentException
     {
