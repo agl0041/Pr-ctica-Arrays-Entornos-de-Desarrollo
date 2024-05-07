@@ -5,7 +5,7 @@ import java.io.*;
 
 public abstract class Arrays 
 {
-    public static float mediaNotas (int numeros[]) throws Exception
+    public static float mediaNotas (int numeros[]) throws IllegalArgumentException
     {
         float media = 0;
         float contador = 0;
@@ -15,7 +15,7 @@ public abstract class Arrays
             for (int i = 0; i < numeros.length; i++)
             {
                 if (numeros[i] < 0 || numeros[i] > 10)
-                    throw new IOException();
+                    throw new IllegalArgumentException();
   
                 else
                 {
@@ -25,7 +25,7 @@ public abstract class Arrays
             }  
         }
         
-        catch (IOException e)
+        catch (IllegalArgumentException e)
         {
             System.out.println("ERROR: el número tiene que estar entre 0 y 10");
         }
