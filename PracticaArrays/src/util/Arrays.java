@@ -5,26 +5,23 @@ import java.io.*;
 
 public abstract class Arrays 
 {
-    public int mediaNotas (int numeros[]) throws Exception
+    public float mediaNotas (int numeros[]) throws Exception
     {
-        int media = 0;
-        int contador = 0;
+        float media = 0;
+        float contador = 0;
         
         try
         {
             for (int i = 0; i < numeros.length; i++)
             {
                 if (numeros[i] < 0 || numeros[i] > 10)
-                {
                     throw new IOException();
-                }
-                
+  
                 else
                 {
                     media += numeros[i];
                     contador ++;
                 }
-
             }  
         }
         
