@@ -22,7 +22,9 @@ public abstract class MisArrays
             }
         }  
         
-        System.out.println("La media total es: " + media);
+        System.out.println("La media total es: " + (media/contador));
+        System.out.println("");
+        
         return (media/contador);			
     }
     
@@ -41,7 +43,9 @@ public abstract class MisArrays
             	maximo = numeros[i];
         } 
         
-        System.out.println("El número máximo es: " + maximo);        
+        System.out.println("El número máximo es: " + maximo); 
+        System.out.println("");
+        
         return maximo;			
     }   
 }

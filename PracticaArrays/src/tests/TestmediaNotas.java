@@ -35,13 +35,47 @@ class TestmediaNotas
 	@Test
     void testMediaNotas_NotasValidas() 
     {
-        float media = MisArrays.mediaNotas(notasValidas);
+        int media = (int) MisArrays.mediaNotas(notasValidas);
         assertEquals(5, media); 
+    }
+	
+	@Test
+    void test2MediaNotas_NotasValidas() 
+    {
+		notasValidas = new int[10];
+		notasValidas[0] = 1;
+		notasValidas[1] = 2;
+		notasValidas[2] = 3;
+		notasValidas[3] = 4;
+		notasValidas[4] = 5;
+		notasValidas[5] = 6;
+		notasValidas[6] = 7;
+		notasValidas[7] = 8;
+		notasValidas[8] = 9;
+		notasValidas[9] = 10;
+		
+        float media = MisArrays.mediaNotas(notasValidas);
+        assertEquals(5.5, media); 
     }
 	
 	@Test
 	void testMediaNotas_NotasNoValidas()
 	{
+		assertThrows(IllegalArgumentException.class, () -> 
+		{
+			MisArrays.mediaNotas(notasNoValidas); 
+		});
+	}
+	
+	@Test
+	void test2MediaNotas_NotasNoValidas()
+	{
+		notasNoValidas[0] = -11;
+		notasNoValidas[1] = -2;
+		notasNoValidas[2] = 100;
+		notasNoValidas[3] = -3454;
+		notasNoValidas[4] = 5;
+		
 		assertThrows(IllegalArgumentException.class, () -> 
 		{
 			MisArrays.mediaNotas(notasNoValidas); 
