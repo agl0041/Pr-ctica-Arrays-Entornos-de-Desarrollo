@@ -29,6 +29,30 @@ public abstract class MisArrays
         
         return (media/contador);			
     }
+    
+    public static float medianaNotas(int numeros[]) throws IllegalArgumentException 
+    {        
+        for (int i = 0; i < numeros.length; i++) 
+        {
+            if (numeros[i] < 0 || numeros[i] > 10) 
+                throw new IllegalArgumentException("ERROR: el número tiene que estar entre 0 y 10");
+        }
+        
+        Arrays.sort(numeros);
+        
+        if (numeros.length % 2 == 0) 
+        {
+            int mitadAbajo = numeros.length / 2 - 1;
+            int mitad = numeros.length / 2;
+            return ((float) (numeros[mitadAbajo] + numeros[mitad]) / 2);
+        } 
+        
+        else 
+        {
+            int mitad = numeros.length / 2;
+            return numeros[mitad];
+        }
+    }
         
     
     public static int maximaNota (int numeros[]) throws IllegalArgumentException
